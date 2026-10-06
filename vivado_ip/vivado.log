@@ -218,3 +218,5 @@ can't read "p_output_type": no such variable
 can't read "p_output_type": no such variable
 can't read "p_output_type": no such variable
 can't read "p_output_type": no such variable
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  6 01:40:27 2026...
