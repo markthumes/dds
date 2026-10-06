@@ -14,7 +14,7 @@ module dds #(
 	input wire rstn,
 	//technically we dont need an enable pin if we just set phase inc to 0
 	input wire [10:0] phase_increment,
-	output reg [OUTPUT_WIDTH-1:0] sin,
+	output wire [OUTPUT_WIDTH-1:0] sin,
 	output wire [OUTPUT_WIDTH-1:0] cos
 );
 
@@ -40,27 +40,9 @@ module dds #(
 
 	//convert for symmetric results
 	wire [15:0] mem_out;
-	reg [9:0] symmetric;
-	//wire [9:0] symmetric;
-	//assign symmetric = quadrant[0] == 1'b1 ? 1000 - slower : slower; //moved for readability
-	always @(*) begin
-		if( quadrant == 0 ) begin
-			symmetric = slower;
-			sin = mem_out;
-		end
-		else if( quadrant == 1 ) begin
-			symmetric = 1000 - slower;
-			sin = -mem_out;
-		end
-		else if( quadrant == 2 ) begin
-			symmetric = slower;
-			sin = ~mem_out + 1;
-		end
-		else begin //quadrant 3
-			symmetric = 1000 - slower;
-			sin = mem_out;
-		end
-	end
+	wire [9:0] symmetric;
+	assign symmetric = quadrant[0] == 1'b1 ? 1000 - slower : slower; //moved for readability
+	assign sin = (quadrant == 1 || quadrant == 2) ? -mem_out : mem_out;
 	
 	//we need to optimize by using the symmetric property of sine waves
 	//also that cos and sin can share the same LUT
