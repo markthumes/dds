@@ -9,7 +9,7 @@ def gen_sine(bit_width = 16, length = 1000):
 	filename = "sinewave.mem"
 
 	t    = np.linspace(0,1,length,endpoint=False)
-	f    = 1
+	f    = 0.25
 	sig  = np.exp(1j*2*np.pi*f*t)
 	sig *= pow(2,bit_width-1)-1
 	
@@ -35,7 +35,7 @@ async def run(dut, period):
 	#complete reset peroid
 	phase_slope_points = []
 	await rst(dut)
-	for i in range(100):
+	for i in range(300):
 		dut.phase_increment = 30;
 		await RisingEdge(dut.clk)
 		phase_slope_points.append(int(dut.phase_accumulator.value))
