@@ -1,0 +1,82 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xcvu9p-flga2104-2L-e",
+      "gen_directory": "../../../../vivado_ip.gen/sources_1/bd/dds_bd",
+      "name": "dds_bd",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1"
+    },
+    "design_tree": {
+      "dds_compiler_0": ""
+    },
+    "components": {
+      "dds_compiler_0": {
+        "vlnv": "xilinx.com:ip:dds_compiler:6.0",
+        "ip_revision": "27",
+        "xci_name": "dds_bd_dds_compiler_0_0",
+        "xci_path": "ip/dds_bd_dds_compiler_0_0/dds_bd_dds_compiler_0_0.xci",
+        "inst_hier_path": "dds_compiler_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "DATA_Has_TLAST": {
+            "value": "Not_Required"
+          },
+          "DDS_Clock_Rate": {
+            "value": "310"
+          },
+          "Frequency_Resolution": {
+            "value": "0.1"
+          },
+          "Has_Phase_Out": {
+            "value": "false"
+          },
+          "Latency": {
+            "value": "11"
+          },
+          "M_DATA_Has_TUSER": {
+            "value": "Not_Required"
+          },
+          "Noise_Shaping": {
+            "value": "Auto"
+          },
+          "OUTPUT_FORM": {
+            "value": "Twos_Complement"
+          },
+          "Optimization_Goal": {
+            "value": "Speed"
+          },
+          "Output_Frequency1": {
+            "value": "0"
+          },
+          "Output_Width": {
+            "value": "16"
+          },
+          "PINC1": {
+            "value": "0"
+          },
+          "Phase_Increment": {
+            "value": "Streaming"
+          },
+          "Phase_Width": {
+            "value": "32"
+          },
+          "Phase_offset": {
+            "value": "Streaming"
+          },
+          "Resync": {
+            "value": "true"
+          },
+          "S_PHASE_Has_TUSER": {
+            "value": "Not_Required"
+          },
+          "Spurious_Free_Dynamic_Range": {
+            "value": "96"
+          }
+        }
+      }
+    }
+  }
+}

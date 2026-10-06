@@ -1,0 +1,332 @@
+/*
+
+AMD Vivado v2025.1 (64-bit) [Major: 2025, Minor: 1]
+SW Build: 6140274 on Wed May 21 22:58:25 MDT 2025
+IP Build: 6138677 on Thu May 22 03:10:11 MDT 2025
+IP Build: 6138677 on Thu May 22 03:10:11 MDT 2025
+
+Process ID (PID): 77502
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Mon Oct 05 08:21:28 CDT 2026
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: Ubuntu
+OS Version: 7.0.0-31-generic
+OS Architecture: amd64
+Available processors (cores): 22
+LSB Release Description: DISTRIB_ID=Ubuntu
+
+Display: 0
+Screen size: 1920x1200
+Local screen bounds: x = 0, y = 32, width = 1920, height = 1120
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: false
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/tools/Xilinx/2025.1/tps/lnx64/jre21.0.1_12
+Java executable: 	/tools/Xilinx/2025.1/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms812m, -Xmx6144m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	812 MB
+Java maximum memory (-Xmx):	 6 GB
+
+User name: 	mark
+User home directory: /home/mark
+User working directory: /home/mark/fpga/dds/vivado_ip
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/2025.1
+HDI_APPROOT: /tools/Xilinx/2025.1/Vivado
+RDI_DATADIR: /tools/Xilinx/2025.1/data
+RDI_BINDIR: /tools/Xilinx/2025.1/Vivado/bin
+
+Vivado preferences file: /home/mark/.Xilinx/Vivado/2025.1/vivado.xml
+Vivado preferences directory: /home/mark/.Xilinx/Vivado/2025.1/
+Vivado layouts directory: /home/mark/.Xilinx/Vivado/2025.1/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/2025.1/Vivado/lib/classes/planAhead.jar
+Vivado log file: 	/home/mark/fpga/dds/vivado_ip/vivado.log
+Vivado journal file: 	/home/mark/fpga/dds/vivado_ip/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-77502-zen
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+GNOME_SHELL_SESSION_MODE: ubuntu
+RDI_APPROOT: /tools/Xilinx/2025.1/Vivado
+RDI_BASEROOT: /tools/Xilinx/2025.1
+RDI_BINROOT: /tools/Xilinx/2025.1/Vivado/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/2025.1/Vivado/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: Vivado
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /tools/Xilinx/2025.1/Vivado/lib/lnx64.o/Ubuntu/24:/tools/Xilinx/2025.1/Vivado/lib/lnx64.o/Ubuntu:/tools/Xilinx/2025.1/Vivado/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/2025.1/Vitis/bin
+RDI_PROG: /tools/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/mark/fpga/dds/vivado_ip:zen_1791206467_77413
+RDI_SHARED_DATA: /tools/Xilinx/SharedData/Vivado/data
+RDI_TPS_ROOT: /tools/Xilinx/2025.1/Vivado/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /bin/bash
+XILINXD_LICENSE_FILE: /home/mark/.Xilinx/Xilinx.lic
+XILINX_DSP: 
+XILINX_HLS: /tools/Xilinx/2025.1/Vitis
+XILINX_PLANAHEAD: /tools/Xilinx/2025.1/Vivado
+XILINX_SDK: /tools/Xilinx/2025.1/Vitis
+XILINX_VITIS: /tools/Xilinx/2025.1/Vitis
+XILINX_VIVADO: /tools/Xilinx/2025.1/Vivado
+
+
+GUI allocated memory:	812 MB
+GUI max memory:		6,144 MB
+Engine allocated memory: 1,840 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,840 MB. GUI used memory: 64 MB. Current time: 10/5/26, 8:21:29 AM CDT
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create Project"); // t (PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT)
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+selectButton("NEXT", "Next", "New Project"); // JButton (NEXT)
+// Elapsed time: 11 seconds
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "dds_inst"); // ad (PAResourceOtoP.ProjectNameChooser_PROJECT_NAME)
+selectCheckBox(PAResourceOtoP.ProjectNameChooser_CREATE_PROJECT_SUBDIRECTORY, "Create project subdirectory", false); // f (PAResourceOtoP.ProjectNameChooser_CREATE_PROJECT_SUBDIRECTORY): FALSE
+selectCheckBox(PAResourceOtoP.ProjectNameChooser_CREATE_PROJECT_SUBDIRECTORY, "Create project subdirectory", true); // f (PAResourceOtoP.ProjectNameChooser_CREATE_PROJECT_SUBDIRECTORY): TRUE
+selectCheckBox(PAResourceOtoP.ProjectNameChooser_CREATE_PROJECT_SUBDIRECTORY, "Create project subdirectory", false); // f (PAResourceOtoP.ProjectNameChooser_CREATE_PROJECT_SUBDIRECTORY): FALSE
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "vivado_ip"); // ad (PAResourceOtoP.ProjectNameChooser_PROJECT_NAME)
+selectButton("NEXT", "Next", "New Project"); // JButton (NEXT)
+// [GUI Memory]: 147 MB (+151339kb) [00:00:43]
+// [Engine Memory]: 1,843 MB (+1781070kb) [00:00:43]
+selectButton("NEXT", "Next", "New Project"); // JButton (NEXT)
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 11 seconds
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // g (PAResourceOtoP.PartChooser_TABBED_PANE)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,864 MB. GUI used memory: 67 MB. Current time: 10/5/26, 8:22:14 AM CDT
+setText("PAResourceAtoD.BoardChooser_BOARD_TABLE_SEARCH_FIELD", "vcu"); // OverlayTextField (PAResourceAtoD.BoardChooser_BOARD_TABLE_SEARCH_FIELD)
+selectTreeTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Virtex UltraScale+ VCU118 Evaluation Platform ; Virtex UltraScale+ VCU118 Evaluation Platform ; Virtex UltraScale+ VCU118 Evaluation Platform ; xilinx.com ; 2.4 ; Virtex UltraScale+ VCU118 Evaluation Platform ; 2104 ; 2.0 ; 832 ; 1182240 ; 2364480 ; 2160 ; 960 ; 6840 ; 57465 ; 52 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 52 ; 0 ; 0 ; 0 ; 0 ; 0 ; 6 ; 30 ;  ; 9 ;  ;  ; 9 ;  ;  ;  ;  ; 0 ; 100 ; 100 ; E ; 0.825 ; 0.850 ; 0.876 ; 0", 0, "Virtex UltraScale+ VCU118 Evaluation Platform", 0, false); // n (PAResourceAtoD.BoardChooser_BOARD_TABLE)
+selectTableHyperlink(PAResourceAtoD.BoardChooser_BOARD_TABLE, PAResourceTtoZ.XHubBoardTable_BOARD_NAME_LINE_1, "Virtex UltraScale+ VCU118 Evaluation Platform"); // k (PAResourceTtoZ.XHubBoardTable_BOARD_NAME_LINE_1)
+openHTML ("www.xilinx.com/vcu118"); // n (PAResourceAtoD.BoardChooser_BOARD_TABLE)
+selectButton("NEXT", "Next", "New Project"); // JButton (NEXT)
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: create_project vivado_ip . -part xcvu9p-flga2104-2L-e 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,954 MB (+19787kb) [00:01:05]
+// WARNING: HEventQueue.dispatchEvent() is taking  1846 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part xilinx.com:vcu118:part0:2.4 [current_project] 
+selectButton("FINISH", "Finish", "New Project"); // JButton (FINISH)
+// 'g' command handler elapsed time: 51 seconds
+dismissDialog("Create Project"); // bk (Create Project Progress)
+dismissDialog("New Project"); // f (dialog0)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add", "Add Sources"); // C (PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, Add)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ap (PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files...)
+dismissFileChooser();
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_CREATE_FILE)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel", "Create Source File"); // f (RDIResource.BaseDialog_CANCEL)
+dismissDialog("Create Source File"); // k (dialog3)
+selectButton("CANCEL", "Cancel", "Add Sources"); // JButton (CANCEL)
+// 'f' command handler elapsed time: 19 seconds
+dismissDialog("Add Sources"); // c (dialog1)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Create Block Design]", 6, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_CREATE_NEW_DIAGRAM
+// Elapsed time: 10 seconds
+setText(PAResourceAtoD.CreateNewDiagramDialog_DESIGN_NAME, "dds_bd", true); // ad (PAResourceAtoD.CreateNewDiagramDialog_DESIGN_NAME)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Create Block Design"); // f (RDIResource.BaseDialog_OK)
+// 'P' command handler elapsed time: 10 seconds
+dismissDialog("Create Block Design"); // aB (dds_bd)
+// TclEventType: LOAD_FEATURE
+// Tcl Message: create_bd_design "dds_bd" 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: Wrote  : </home/mark/fpga/dds/vivado_ip/vivado_ip.srcs/sources_1/bd/dds_bd/dds_bd.bd>  
+// HMemoryUtils.trashcanNow. Engine heap size: 2,094 MB. GUI used memory: 75 MB. Current time: 10/5/26, 8:22:59 AM CDT
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 2,144 MB (+96299kb) [00:01:46]
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // x (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+dismissDialog("Create Block Design"); // bk (Create Block Design Progress)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 42s
+selectButton(PAResourceQtoS.SystemBuilderView_ADD_IP, "System_RSB_ADD_IP"); // C (PAResourceQtoS.SystemBuilderView_ADD_IP, System_RSB_ADD_IP)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 44s
+// Tcl Message: update_compile_order -fileset sources_1 
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "dds"); // OverlayTextField (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "DDS Compiler", 1, "DDS Compiler", 0, false); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "DDS Compiler", 1); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "DDS Compiler", 1, "DDS Compiler", 0, false, false, false, false, false, true); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE) - Double Click
+// TclEventType: LOAD_FEATURE
+// Tcl Message: startgroup 
+// Tcl Message: create_bd_cell -type ip -vlnv xilinx.com:ip:dds_compiler:6.0 dds_compiler_0 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: endgroup 
+dismissDialog("Add IP"); // bk (Add IP Progress)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 48s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 50s
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /dds_compiler_0]"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /dds_compiler_0]"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runCommand("customize_rsb_block");
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// WARNING: HEventQueue.dispatchEvent() is taking  1094 ms.
+dismissDialog("Re-customize IP"); // C (Re-customize IP Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,253 MB. GUI used memory: 90 MB. Current time: 10/5/26, 8:23:14 AM CDT
+// Elapsed time: 13 seconds
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Implementation", 1); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Detailed Implementation", 2); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Implementation", 1); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Configuration", 0); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+// [GUI Memory]: 162 MB (+8234kb) [00:08:24]
+// Elapsed time: 1200 seconds
+dismissDialog("Re-customize IP"); // m (dialog4)
+selectTree(PAResourceQtoS.SystemTreeView_SYSTEM_TREE, "[dds_bd, dds_compiler_0]", 1, true); // a (PAResourceQtoS.SystemTreeView_SYSTEM_TREE) - Node
+selectTree(PAResourceQtoS.SystemTreeView_SYSTEM_TREE, "[dds_bd, dds_compiler_0]", 1, true, false, false, false, false, true); // a (PAResourceQtoS.SystemTreeView_SYSTEM_TREE) - Double Click - Node
+selectTree(PAResourceQtoS.SystemTreeView_SYSTEM_TREE, "[dds_bd, dds_compiler_0]", 1, true); // a (PAResourceQtoS.SystemTreeView_SYSTEM_TREE) - Node
+selectTree(PAResourceQtoS.SystemTreeView_SYSTEM_TREE, "[dds_bd, dds_compiler_0]", 1, true, false, false, false, false, true); // a (PAResourceQtoS.SystemTreeView_SYSTEM_TREE) - Double Click - Node
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /dds_compiler_0]"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /dds_compiler_0]"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runCommand("customize_rsb_block");
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// [Engine Memory]: 2,252 MB (+1393kb) [00:22:26]
+dismissDialog("Re-customize IP"); // C (Re-customize IP Progress)
+// Elapsed time: 41 seconds
+setText("System Clock (MHz)", "310"); // I (System Clock (MHz))
+// Elapsed time: 32 seconds
+setText(PAResourceItoN.IPIComponentName_COMPONENT_NAME, "dds_compiler_0"); // ad (PAResourceItoN.IPIComponentName_COMPONENT_NAME)
+selectComboBox("Configuration Options (PartsPresent)", "Phase Generator and SIN COS LUT", 0); // bN (Configuration Options (PartsPresent))
+// Elapsed time: 30 seconds
+setText("Spurious Free Dynamic Range (dB)", "96"); // I (Spurious Free Dynamic Range (dB))
+// Elapsed time: 17 seconds
+setText("Frequency Resolution (Hz)", "0.1"); // I (Frequency Resolution (Hz))
+// Elapsed time: 13 seconds
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Implementation", 1); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+// Elapsed time: 22 seconds
+selectRadioButton((HResource) null, "Streaming"); // cE
+selectCheckBox((HResource) null, "Resync", true); // f: TRUE
+selectRadioButton((HResource) null, "Streaming"); // cE
+// Elapsed time: 27 seconds
+selectComboBox("Optimization Goal (Optimization_Goal)", "Speed", 2); // bN (Optimization Goal (Optimization_Goal))
+// HMemoryUtils.trashcanNow. Engine heap size: 2,278 MB. GUI used memory: 98 MB. Current time: 10/5/26, 8:46:59 AM CDT
+// Elapsed time: 11 seconds
+selectCheckBox((HResource) null, "Has Phase Out", false); // f: FALSE
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Detailed Implementation", 2); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+// Elapsed time: 68 seconds
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Summary", 3); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+// Elapsed time: 33 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Re-customize IP"); // f (RDIResource.BaseDialog_OK)
+dismissDialog("Re-customize IP"); // m (dialog5)
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: set_property -dict [list \   CONFIG.DATA_Has_TLAST {Not_Required} \   CONFIG.DDS_Clock_Rate {310} \   CONFIG.Frequency_Resolution {0.1} \   CONFIG.Has_Phase_Out {false} \   CONFIG.Latency {11} \   CONFIG.M_DATA_Has_TUSER {Not_Required} \   CONFIG.Noise_Shaping {Auto} \   CONFIG.OUTPUT_FORM {Twos_Complement} \   CONFIG.Optimization_Goal {Speed} \   CONFIG.Output_Frequency1 {0} \   CONFIG.Output_Width {16} \   CONFIG.PINC1 {0} \   CONFIG.Phase_Increment {Streaming} \   CONFIG.Phase_Width {32} \   CONFIG.Phase_offset {Streaming} \   CONFIG.Resync {true} \   CONFIG.S_PHASE_Has_TUSER {Not_Required} \   CONFIG.Spurious_Free_Dynamic_Range {96} \ ] [get_bd_cells dds_compiler_0] 
+// Elapsed time: 12 seconds
+selectButton(PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN, "save_rsb_design"); // C (PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN, save_rsb_design)
+// Run Command: PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: save_bd_design 
+// Tcl Message: Wrote  : </home/mark/fpga/dds/vivado_ip/vivado_ip.srcs/sources_1/bd/dds_bd/dds_bd.bd>  Wrote  : </home/mark/fpga/dds/vivado_ip/vivado_ip.srcs/sources_1/bd/dds_bd/ui/bd_875e8cee.ui>  
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 26m:48s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 26m:50s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,313 MB. GUI used memory: 94 MB. Current time: 10/5/26, 8:49:14 AM CDT
+// Elapsed time: 488 seconds
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 221, 134); // cE (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 232, 130); // cE (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+// Elapsed time: 11 seconds
+typeControlKey(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, "RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR", 'c'); // cE (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,300 MB. GUI used memory: 95 MB. Current time: 10/5/26, 9:19:14 AM CDT
+// WARNING: HEventQueue.dispatchEvent() is taking  118541 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,300 MB. GUI used memory: 94 MB. Current time: 10/5/26, 9:49:17 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,300 MB. GUI used memory: 75 MB. Current time: 10/5/26, 10:19:17 AM CDT
+// WARNING: HEventQueue.dispatchEvent() is taking  3169213 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,300 MB. GUI used memory: 74 MB. Current time: 10/5/26, 11:18:26 AM CDT
+// Elapsed time: 8879 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 196, 123); // cE (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /dds_compiler_0]"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /dds_compiler_0]"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runCommand("customize_rsb_block");
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// WARNING: HEventQueue.dispatchEvent() is taking  1074 ms.
+dismissDialog("Re-customize IP"); // C (Re-customize IP Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,336 MB. GUI used memory: 84 MB. Current time: 10/5/26, 11:25:41 AM CDT
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Implementation", 1); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Detailed Implementation", 2); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Summary", 3); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Configuration", 0); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Implementation", 1); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Detailed Implementation", 2); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Summary", 3); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Configuration", 0); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+// Elapsed time: 26 seconds
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Implementation", 1); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Detailed Implementation", 2); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Configuration", 0); // cK (PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,336 MB. GUI used memory: 84 MB. Current time: 10/5/26, 11:55:42 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,336 MB. GUI used memory: 84 MB. Current time: 10/5/26, 12:25:42 PM CDT
+// WARNING: HEventQueue.dispatchEvent() is taking  1249682 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,336 MB. GUI used memory: 84 MB. Current time: 10/5/26, 12:55:46 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,336 MB. GUI used memory: 84 MB. Current time: 10/5/26, 1:25:46 PM CDT
+// WARNING: HEventQueue.dispatchEvent() is taking  16942355 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,336 MB. GUI used memory: 84 MB. Current time: 10/5/26, 6:09:57 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,338 MB. GUI used memory: 83 MB. Current time: 10/5/26, 8:11:22 PM CDT

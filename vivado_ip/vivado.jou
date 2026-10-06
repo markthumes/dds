@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Oct  5 08:21:09 2026
+# Process ID         : 77502
+# Current directory  : /home/mark/fpga/dds/vivado_ip
+# Command line       : vivado
+# Log file           : /home/mark/fpga/dds/vivado_ip/vivado.log
+# Journal file       : /home/mark/fpga/dds/vivado_ip/vivado.jou
+# Running On         : zen
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : Intel(R) Core(TM) Ultra 7 155H
+# CPU Frequency      : 2000.000 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 22
+# Host memory        : 16083 MB
+# Swap memory        : 21474 MB
+# Total Virtual      : 37558 MB
+# Available Virtual  : 26787 MB
+#-----------------------------------------------------------
+start_gui
+create_project vivado_ip . -part xcvu9p-flga2104-2L-e
+set_property board_part xilinx.com:vcu118:part0:2.4 [current_project]
+create_bd_design "dds_bd"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:dds_compiler:6.0 dds_compiler_0
+endgroup
+set_property -dict [list \
+  CONFIG.DATA_Has_TLAST {Not_Required} \
+  CONFIG.DDS_Clock_Rate {310} \
+  CONFIG.Frequency_Resolution {0.1} \
+  CONFIG.Has_Phase_Out {false} \
+  CONFIG.Latency {11} \
+  CONFIG.M_DATA_Has_TUSER {Not_Required} \
+  CONFIG.Noise_Shaping {Auto} \
+  CONFIG.OUTPUT_FORM {Twos_Complement} \
+  CONFIG.Optimization_Goal {Speed} \
+  CONFIG.Output_Frequency1 {0} \
+  CONFIG.Output_Width {16} \
+  CONFIG.PINC1 {0} \
+  CONFIG.Phase_Increment {Streaming} \
+  CONFIG.Phase_Width {32} \
+  CONFIG.Phase_offset {Streaming} \
+  CONFIG.Resync {true} \
+  CONFIG.S_PHASE_Has_TUSER {Not_Required} \
+  CONFIG.Spurious_Free_Dynamic_Range {96} \
+] [get_bd_cells dds_compiler_0]
+save_bd_design
