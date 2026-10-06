@@ -41,16 +41,20 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     for (int __Vfinal = 0; __Vfinal < 2; ++__Vfinal) {
         __Vscope_TOP.varInsert(__Vfinal,"clk", &(TOP.clk), false, VLVT_UINT8,VLVD_IN|VLVF_PUB_RW,0);
         __Vscope_TOP.varInsert(__Vfinal,"cos", &(TOP.cos), false, VLVT_UINT16,VLVD_OUT|VLVF_PUB_RW,1 ,15,0);
-        __Vscope_TOP.varInsert(__Vfinal,"phase_increment", &(TOP.phase_increment), false, VLVT_UINT16,VLVD_IN|VLVF_PUB_RW,1 ,9,0);
+        __Vscope_TOP.varInsert(__Vfinal,"phase_increment", &(TOP.phase_increment), false, VLVT_UINT16,VLVD_IN|VLVF_PUB_RW,1 ,10,0);
         __Vscope_TOP.varInsert(__Vfinal,"rstn", &(TOP.rstn), false, VLVT_UINT8,VLVD_IN|VLVF_PUB_RW,0);
         __Vscope_TOP.varInsert(__Vfinal,"sin", &(TOP.sin), false, VLVT_UINT16,VLVD_OUT|VLVF_PUB_RW,1 ,15,0);
         __Vscope_dds.varInsert(__Vfinal,"OUTPUT_WIDTH", const_cast<void*>(static_cast<const void*>(&(TOP.dds__DOT__OUTPUT_WIDTH))), true, VLVT_UINT32,VLVD_NODIR|VLVF_PUB_RW,1 ,31,0);
         __Vscope_dds.varInsert(__Vfinal,"clk", &(TOP.dds__DOT__clk), false, VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_dds.varInsert(__Vfinal,"cos", &(TOP.dds__DOT__cos), false, VLVT_UINT16,VLVD_NODIR|VLVF_PUB_RW,1 ,15,0);
-        __Vscope_dds.varInsert(__Vfinal,"phase_accumulator", &(TOP.dds__DOT__phase_accumulator), false, VLVT_UINT16,VLVD_NODIR|VLVF_PUB_RW,1 ,9,0);
-        __Vscope_dds.varInsert(__Vfinal,"phase_increment", &(TOP.dds__DOT__phase_increment), false, VLVT_UINT16,VLVD_NODIR|VLVF_PUB_RW,1 ,9,0);
+        __Vscope_dds.varInsert(__Vfinal,"mem_out", &(TOP.dds__DOT__mem_out), false, VLVT_UINT16,VLVD_NODIR|VLVF_PUB_RW,1 ,15,0);
+        __Vscope_dds.varInsert(__Vfinal,"phase_accumulator", &(TOP.dds__DOT__phase_accumulator), false, VLVT_UINT16,VLVD_NODIR|VLVF_PUB_RW,1 ,10,0);
+        __Vscope_dds.varInsert(__Vfinal,"phase_increment", &(TOP.dds__DOT__phase_increment), false, VLVT_UINT16,VLVD_NODIR|VLVF_PUB_RW,1 ,10,0);
+        __Vscope_dds.varInsert(__Vfinal,"quadrant", &(TOP.dds__DOT__quadrant), false, VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,1,0);
         __Vscope_dds.varInsert(__Vfinal,"rstn", &(TOP.dds__DOT__rstn), false, VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
         __Vscope_dds.varInsert(__Vfinal,"sin", &(TOP.dds__DOT__sin), false, VLVT_UINT16,VLVD_NODIR|VLVF_PUB_RW,1 ,15,0);
+        __Vscope_dds.varInsert(__Vfinal,"slower", &(TOP.dds__DOT__slower), false, VLVT_UINT16,VLVD_NODIR|VLVF_PUB_RW,1 ,9,0);
+        __Vscope_dds.varInsert(__Vfinal,"symmetric", &(TOP.dds__DOT__symmetric), false, VLVT_UINT16,VLVD_NODIR|VLVF_PUB_RW,1 ,9,0);
         __Vscope_dds__sin_lut.varInsert(__Vfinal,"DEPTH", const_cast<void*>(static_cast<const void*>(&(TOP.dds__DOT__sin_lut__DOT__DEPTH))), true, VLVT_UINT32,VLVD_NODIR|VLVF_PUB_RW,1 ,31,0);
         __Vscope_dds__sin_lut.varInsert(__Vfinal,"FILE_TYPE", const_cast<void*>(static_cast<const void*>(&(TOP.dds__DOT__sin_lut__DOT__FILE_TYPE))), true, VLVT_UINT32,VLVD_NODIR|VLVF_PUB_RW,1 ,23,0);
         __Vscope_dds__sin_lut.varInsert(__Vfinal,"INITIAL_MEMORY_FILE", const_cast<void*>(static_cast<const void*>(&(TOP.dds__DOT__sin_lut__DOT__INITIAL_MEMORY_FILE))), true, VLVT_WDATA,VLVD_NODIR|VLVF_PUB_RW,1 ,95,0);

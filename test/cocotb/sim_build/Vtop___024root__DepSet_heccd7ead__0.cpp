@@ -11,14 +11,32 @@ VL_INLINE_OPT void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) 
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___ico_sequent__TOP__0\n"); );
     // Body
     vlSelf->dds__DOT__phase_increment = vlSelf->phase_increment;
-    vlSelf->dds__DOT__sin_lut__DOT__address = vlSelf->dds__DOT__phase_accumulator;
     vlSelf->cos = vlSelf->dds__DOT__cos;
     vlSelf->dds__DOT__clk = vlSelf->clk;
     vlSelf->dds__DOT__rstn = vlSelf->rstn;
-    vlSelf->sin = vlSelf->dds__DOT__sin_lut__DOT__data;
+    vlSelf->dds__DOT__slower = (0x3ffU & ((IData)(vlSelf->dds__DOT__phase_accumulator) 
+                                          >> 1U));
+    vlSelf->dds__DOT__mem_out = vlSelf->dds__DOT__sin_lut__DOT__data;
     vlSelf->dds__DOT__sin_lut__DOT__clk = vlSelf->dds__DOT__clk;
     vlSelf->dds__DOT__sin_lut__DOT__rstn = vlSelf->dds__DOT__rstn;
-    vlSelf->dds__DOT__sin = vlSelf->sin;
+    if ((0U == (IData)(vlSelf->dds__DOT__quadrant))) {
+        vlSelf->dds__DOT__symmetric = (0x3ffU & (IData)(vlSelf->dds__DOT__slower));
+        vlSelf->dds__DOT__sin = (0xffffU & (IData)(vlSelf->dds__DOT__mem_out));
+    } else if ((1U == (IData)(vlSelf->dds__DOT__quadrant))) {
+        vlSelf->dds__DOT__symmetric = (0x3ffU & ((IData)(0x3e8U) 
+                                                 - (IData)(vlSelf->dds__DOT__slower)));
+        vlSelf->dds__DOT__sin = (0xffffU & (- (IData)(vlSelf->dds__DOT__mem_out)));
+    } else if ((2U == (IData)(vlSelf->dds__DOT__quadrant))) {
+        vlSelf->dds__DOT__symmetric = (0x3ffU & (IData)(vlSelf->dds__DOT__slower));
+        vlSelf->dds__DOT__sin = (0xffffU & ((IData)(1U) 
+                                            + (~ (IData)(vlSelf->dds__DOT__mem_out))));
+    } else {
+        vlSelf->dds__DOT__symmetric = (0x3ffU & ((IData)(0x3e8U) 
+                                                 - (IData)(vlSelf->dds__DOT__slower)));
+        vlSelf->dds__DOT__sin = (0xffffU & (IData)(vlSelf->dds__DOT__mem_out));
+    }
+    vlSelf->dds__DOT__sin_lut__DOT__address = vlSelf->dds__DOT__symmetric;
+    vlSelf->sin = vlSelf->dds__DOT__sin;
 }
 
 void Vtop___024root___eval_ico(Vtop___024root* vlSelf) {
@@ -59,41 +77,61 @@ VL_INLINE_OPT void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) 
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__0\n"); );
     // Init
-    SData/*9:0*/ __Vdly__dds__DOT__phase_accumulator;
+    SData/*10:0*/ __Vdly__dds__DOT__phase_accumulator;
     __Vdly__dds__DOT__phase_accumulator = 0;
     // Body
     __Vdly__dds__DOT__phase_accumulator = vlSelf->dds__DOT__phase_accumulator;
     if (vlSelf->rstn) {
-        __Vdly__dds__DOT__phase_accumulator = (0x3ffU 
-                                               & ((0x3e8U 
-                                                   < 
-                                                   ((IData)(vlSelf->dds__DOT__phase_accumulator) 
-                                                    + (IData)(vlSelf->phase_increment)))
-                                                   ? 
-                                                  (((IData)(vlSelf->dds__DOT__phase_accumulator) 
-                                                    + (IData)(vlSelf->phase_increment)) 
-                                                   - (IData)(0x3e8U))
-                                                   : 
-                                                  ((IData)(vlSelf->dds__DOT__phase_accumulator) 
-                                                   + (IData)(vlSelf->phase_increment))));
+        if ((0x7d0U < ((IData)(vlSelf->dds__DOT__phase_accumulator) 
+                       + (IData)(vlSelf->phase_increment)))) {
+            __Vdly__dds__DOT__phase_accumulator = (0x7ffU 
+                                                   & (((IData)(vlSelf->dds__DOT__phase_accumulator) 
+                                                       + (IData)(vlSelf->phase_increment)) 
+                                                      - (IData)(0x7d0U)));
+            vlSelf->dds__DOT__quadrant = (3U & ((IData)(1U) 
+                                                + (IData)(vlSelf->dds__DOT__quadrant)));
+        } else {
+            __Vdly__dds__DOT__phase_accumulator = (0x7ffU 
+                                                   & ((IData)(vlSelf->dds__DOT__phase_accumulator) 
+                                                      + (IData)(vlSelf->phase_increment)));
+        }
         vlSelf->dds__DOT__sin_lut__DOT__data = ((0x3e7U 
-                                                 < (IData)(vlSelf->dds__DOT__phase_accumulator))
+                                                 < (IData)(vlSelf->dds__DOT__symmetric))
                                                  ? 0U
                                                  : 
                                                 ((0x3e7U 
-                                                  >= (IData)(vlSelf->dds__DOT__phase_accumulator))
+                                                  >= (IData)(vlSelf->dds__DOT__symmetric))
                                                   ? 
                                                  vlSelf->dds__DOT__sin_lut__DOT__memory
-                                                 [vlSelf->dds__DOT__phase_accumulator]
+                                                 [vlSelf->dds__DOT__symmetric]
                                                   : 0U));
     } else {
         __Vdly__dds__DOT__phase_accumulator = 0U;
+        vlSelf->dds__DOT__quadrant = 0U;
         vlSelf->dds__DOT__sin_lut__DOT__data = 0U;
     }
     vlSelf->dds__DOT__phase_accumulator = __Vdly__dds__DOT__phase_accumulator;
-    vlSelf->dds__DOT__sin_lut__DOT__address = vlSelf->dds__DOT__phase_accumulator;
-    vlSelf->sin = vlSelf->dds__DOT__sin_lut__DOT__data;
-    vlSelf->dds__DOT__sin = vlSelf->sin;
+    vlSelf->dds__DOT__slower = (0x3ffU & ((IData)(vlSelf->dds__DOT__phase_accumulator) 
+                                          >> 1U));
+    vlSelf->dds__DOT__mem_out = vlSelf->dds__DOT__sin_lut__DOT__data;
+    if ((0U == (IData)(vlSelf->dds__DOT__quadrant))) {
+        vlSelf->dds__DOT__symmetric = (0x3ffU & (IData)(vlSelf->dds__DOT__slower));
+        vlSelf->dds__DOT__sin = (0xffffU & (IData)(vlSelf->dds__DOT__mem_out));
+    } else if ((1U == (IData)(vlSelf->dds__DOT__quadrant))) {
+        vlSelf->dds__DOT__symmetric = (0x3ffU & ((IData)(0x3e8U) 
+                                                 - (IData)(vlSelf->dds__DOT__slower)));
+        vlSelf->dds__DOT__sin = (0xffffU & (- (IData)(vlSelf->dds__DOT__mem_out)));
+    } else if ((2U == (IData)(vlSelf->dds__DOT__quadrant))) {
+        vlSelf->dds__DOT__symmetric = (0x3ffU & (IData)(vlSelf->dds__DOT__slower));
+        vlSelf->dds__DOT__sin = (0xffffU & ((IData)(1U) 
+                                            + (~ (IData)(vlSelf->dds__DOT__mem_out))));
+    } else {
+        vlSelf->dds__DOT__symmetric = (0x3ffU & ((IData)(0x3e8U) 
+                                                 - (IData)(vlSelf->dds__DOT__slower)));
+        vlSelf->dds__DOT__sin = (0xffffU & (IData)(vlSelf->dds__DOT__mem_out));
+    }
+    vlSelf->dds__DOT__sin_lut__DOT__address = vlSelf->dds__DOT__symmetric;
+    vlSelf->sin = vlSelf->dds__DOT__sin;
 }
 
 void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
@@ -169,7 +207,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__ico(vlSelf);
 #endif
-            VL_FATAL_MT("/home/mark/fpga/dds/test/cocotb/../../rtl/dds.v", 8, "", "Input combinational region did not converge.");
+            VL_FATAL_MT("/home/mark/fpga/dds/test/cocotb/../../rtl/dds.v", 10, "", "Input combinational region did not converge.");
         }
         __VicoIterCount = ((IData)(1U) + __VicoIterCount);
         __VicoContinue = 0U;
@@ -185,7 +223,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__nba(vlSelf);
 #endif
-            VL_FATAL_MT("/home/mark/fpga/dds/test/cocotb/../../rtl/dds.v", 8, "", "NBA region did not converge.");
+            VL_FATAL_MT("/home/mark/fpga/dds/test/cocotb/../../rtl/dds.v", 10, "", "NBA region did not converge.");
         }
         __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
         __VnbaContinue = 0U;
@@ -196,7 +234,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__act(vlSelf);
 #endif
-                VL_FATAL_MT("/home/mark/fpga/dds/test/cocotb/../../rtl/dds.v", 8, "", "Active region did not converge.");
+                VL_FATAL_MT("/home/mark/fpga/dds/test/cocotb/../../rtl/dds.v", 10, "", "Active region did not converge.");
             }
             vlSelf->__VactIterCount = ((IData)(1U) 
                                        + vlSelf->__VactIterCount);
@@ -221,7 +259,7 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
         Verilated::overWidthError("clk");}
     if (VL_UNLIKELY((vlSelf->rstn & 0xfeU))) {
         Verilated::overWidthError("rstn");}
-    if (VL_UNLIKELY((vlSelf->phase_increment & 0xfc00U))) {
+    if (VL_UNLIKELY((vlSelf->phase_increment & 0xf800U))) {
         Verilated::overWidthError("phase_increment");}
 }
 #endif  // VL_DEBUG

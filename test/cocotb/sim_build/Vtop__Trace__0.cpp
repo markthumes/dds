@@ -25,20 +25,24 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedVcd::Buf
     // Body
     bufp->chgBit(oldp+0,(vlSelf->clk));
     bufp->chgBit(oldp+1,(vlSelf->rstn));
-    bufp->chgSData(oldp+2,(vlSelf->phase_increment),10);
+    bufp->chgSData(oldp+2,(vlSelf->phase_increment),11);
     bufp->chgSData(oldp+3,(vlSelf->sin),16);
     bufp->chgSData(oldp+4,(vlSelf->cos),16);
     bufp->chgBit(oldp+5,(vlSelf->dds__DOT__clk));
     bufp->chgBit(oldp+6,(vlSelf->dds__DOT__rstn));
-    bufp->chgSData(oldp+7,(vlSelf->dds__DOT__phase_increment),10);
+    bufp->chgSData(oldp+7,(vlSelf->dds__DOT__phase_increment),11);
     bufp->chgSData(oldp+8,(vlSelf->dds__DOT__sin),16);
     bufp->chgSData(oldp+9,(vlSelf->dds__DOT__cos),16);
-    bufp->chgSData(oldp+10,(vlSelf->dds__DOT__phase_accumulator),10);
-    bufp->chgBit(oldp+11,(vlSelf->dds__DOT__sin_lut__DOT__clk));
-    bufp->chgBit(oldp+12,(vlSelf->dds__DOT__sin_lut__DOT__rstn));
-    bufp->chgBit(oldp+13,(vlSelf->dds__DOT__sin_lut__DOT__read));
-    bufp->chgSData(oldp+14,(vlSelf->dds__DOT__sin_lut__DOT__address),10);
-    bufp->chgSData(oldp+15,(vlSelf->dds__DOT__sin_lut__DOT__data),16);
+    bufp->chgSData(oldp+10,(vlSelf->dds__DOT__phase_accumulator),11);
+    bufp->chgCData(oldp+11,(vlSelf->dds__DOT__quadrant),2);
+    bufp->chgSData(oldp+12,(vlSelf->dds__DOT__slower),10);
+    bufp->chgSData(oldp+13,(vlSelf->dds__DOT__mem_out),16);
+    bufp->chgSData(oldp+14,(vlSelf->dds__DOT__symmetric),10);
+    bufp->chgBit(oldp+15,(vlSelf->dds__DOT__sin_lut__DOT__clk));
+    bufp->chgBit(oldp+16,(vlSelf->dds__DOT__sin_lut__DOT__rstn));
+    bufp->chgBit(oldp+17,(vlSelf->dds__DOT__sin_lut__DOT__read));
+    bufp->chgSData(oldp+18,(vlSelf->dds__DOT__sin_lut__DOT__address),10);
+    bufp->chgSData(oldp+19,(vlSelf->dds__DOT__sin_lut__DOT__data),16);
 }
 
 void Vtop___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {

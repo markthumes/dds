@@ -65,7 +65,7 @@ VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__stl(vlSelf);
 #endif
-            VL_FATAL_MT("/home/mark/fpga/dds/test/cocotb/../../rtl/dds.v", 8, "", "Settle region did not converge.");
+            VL_FATAL_MT("/home/mark/fpga/dds/test/cocotb/../../rtl/dds.v", 10, "", "Settle region did not converge.");
         }
         __VstlIterCount = ((IData)(1U) + __VstlIterCount);
         __VstlContinue = 0U;
@@ -172,15 +172,19 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     // Body
     vlSelf->clk = VL_RAND_RESET_I(1);
     vlSelf->rstn = VL_RAND_RESET_I(1);
-    vlSelf->phase_increment = VL_RAND_RESET_I(10);
+    vlSelf->phase_increment = VL_RAND_RESET_I(11);
     vlSelf->sin = VL_RAND_RESET_I(16);
     vlSelf->cos = VL_RAND_RESET_I(16);
     vlSelf->dds__DOT__clk = VL_RAND_RESET_I(1);
     vlSelf->dds__DOT__rstn = VL_RAND_RESET_I(1);
-    vlSelf->dds__DOT__phase_increment = VL_RAND_RESET_I(10);
+    vlSelf->dds__DOT__phase_increment = VL_RAND_RESET_I(11);
     vlSelf->dds__DOT__sin = VL_RAND_RESET_I(16);
     vlSelf->dds__DOT__cos = VL_RAND_RESET_I(16);
-    vlSelf->dds__DOT__phase_accumulator = VL_RAND_RESET_I(10);
+    vlSelf->dds__DOT__phase_accumulator = VL_RAND_RESET_I(11);
+    vlSelf->dds__DOT__quadrant = VL_RAND_RESET_I(2);
+    vlSelf->dds__DOT__slower = VL_RAND_RESET_I(10);
+    vlSelf->dds__DOT__mem_out = VL_RAND_RESET_I(16);
+    vlSelf->dds__DOT__symmetric = VL_RAND_RESET_I(10);
     vlSelf->dds__DOT__sin_lut__DOT__clk = VL_RAND_RESET_I(1);
     vlSelf->dds__DOT__sin_lut__DOT__rstn = VL_RAND_RESET_I(1);
     vlSelf->dds__DOT__sin_lut__DOT__read = VL_RAND_RESET_I(1);

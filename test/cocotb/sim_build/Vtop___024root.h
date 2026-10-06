@@ -18,6 +18,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final : public VerilatedModule
     VL_IN8(rstn,0,0);
     CData/*0:0*/ dds__DOT__clk;
     CData/*0:0*/ dds__DOT__rstn;
+    CData/*1:0*/ dds__DOT__quadrant;
     CData/*0:0*/ dds__DOT__sin_lut__DOT__clk;
     CData/*0:0*/ dds__DOT__sin_lut__DOT__rstn;
     CData/*0:0*/ dds__DOT__sin_lut__DOT__read;
@@ -25,13 +26,16 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final : public VerilatedModule
     CData/*0:0*/ __VicoFirstIteration;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
     CData/*0:0*/ __VactContinue;
-    VL_IN16(phase_increment,9,0);
+    VL_IN16(phase_increment,10,0);
     VL_OUT16(sin,15,0);
     VL_OUT16(cos,15,0);
-    SData/*9:0*/ dds__DOT__phase_increment;
+    SData/*10:0*/ dds__DOT__phase_increment;
     SData/*15:0*/ dds__DOT__sin;
     SData/*15:0*/ dds__DOT__cos;
-    SData/*9:0*/ dds__DOT__phase_accumulator;
+    SData/*10:0*/ dds__DOT__phase_accumulator;
+    SData/*9:0*/ dds__DOT__slower;
+    SData/*15:0*/ dds__DOT__mem_out;
+    SData/*9:0*/ dds__DOT__symmetric;
     SData/*9:0*/ dds__DOT__sin_lut__DOT__address;
     SData/*15:0*/ dds__DOT__sin_lut__DOT__data;
     IData/*31:0*/ __VactIterCount;
