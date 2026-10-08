@@ -9,4 +9,5 @@ LUT Based Direct Digital Synthesis
 
 
 In comparison to Vivado DDS
+
 <img width="501" height="132" alt="image" src="https://github.com/user-attachments/assets/e409b7ef-9dd2-4fec-8859-88f5df7dfa51" />
