@@ -1,6 +1,8 @@
 # dds
 LUT Based Direct Digital Synthesis
 <img width="929" height="582" alt="image" src="https://github.com/user-attachments/assets/14d5b379-e612-4803-bbf1-a0fc0d7e3a16" />
+
+~~~~~~~~~~~~
 1. CLB Logic
 ------------
 
@@ -53,3 +55,5 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | LUT1     |    1 |                 CLB |
 | BUFGCE   |    1 |               Clock |
 +----------+------+---------------------+
+
+~~~~~~~~~~~~
