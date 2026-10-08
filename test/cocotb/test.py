@@ -8,18 +8,21 @@ import matplotlib.pyplot as plt
 def gen_sine(bit_width = 16, length = 1000):
 	filename = "sinewave.mem"
 
-	t    = np.linspace(0,1,length,endpoint=False)
-	f    = 0.25
+	t    = np.linspace(0,999,length)
+	f    = 0.25/length
+	print(f)
 	sig  = np.exp(1j*2*np.pi*f*t)
 	sig *= pow(2,bit_width-1)-1
 	
 	mask = (1 << bit_width) - 1
 
 	with open(filename,"w") as fp:
-		for s in np.real(sig):
-			s_int = int(s) #Truncate
-			s_unsigned = s_int & mask
-			fp.write(f"{s_unsigned:0{bit_width//4}x}\n")
+		for p in sig:
+			s, c = int(np.real(p)), int(np.imag(p))
+			s_unsigned = s & mask
+			c_unsigned = c & mask
+			fp.write(f"{s_unsigned:0{bit_width//4}x}")
+			fp.write(f"{c_unsigned:0{bit_width//4}x}\n")
 
 async def rst(dut):
 	for _ in range(2):
@@ -35,8 +38,8 @@ async def run(dut, period):
 	#complete reset peroid
 	phase_slope_points = []
 	await rst(dut)
-	for i in range(300):
-		dut.phase_increment = 30;
+	for i in range(5000):
+		dut.phase_increment = 1;
 		await RisingEdge(dut.clk)
 		phase_slope_points.append(int(dut.phase_accumulator.value))
 		#print(phase_slope_points)
