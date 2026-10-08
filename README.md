@@ -1,6 +1,7 @@
 # dds
 LUT Based Direct Digital Synthesis
 <img width="929" height="582" alt="image" src="https://github.com/user-attachments/assets/14d5b379-e612-4803-bbf1-a0fc0d7e3a16" />
+<img width="1187" height="1038" alt="image" src="https://github.com/user-attachments/assets/b3556891-79a1-44dc-9263-2d18c99b829e" />
 
 ~~~~~~~~~~~~
 1. CLB Logic
