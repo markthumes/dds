@@ -7,62 +7,74 @@
 
 //for my DDS to go SLOWER, we need to select bits that are higher than
 //my clock rate such that the data only changes every few clock cycles
+
+//ehh, just counts
+//what if I add 1000 to 1000 (can do partner)
+//what if I add 2000 to 2000 (need to modulus outside of counter)
+module accumulator #(
+	parameter MAX_VALUE = 1000
+)(
+	input wire clk,
+	input wire nrst,
+	input wire [$clog2(MAX_VALUE)-1:0] increment,
+	output reg [$clog2(MAX_VALUE)-1:0] count
+);
+	always @(posedge clk) begin
+		if(!nrst) count <= 0;
+		else begin
+			if( count + increment > MAX_VALUE )
+				count <= count + increment - MAX_VALUE;
+			else
+				count <= count + increment;
+		end
+	end
+endmodule
+
 module dds #(
-	parameter OUTPUT_WIDTH = 16
+	parameter OUTPUT_WIDTH = 16,
+	parameter LUT_SIZE = 1000
 )(
 	input wire clk,
 	input wire rstn,
 	//technically we dont need an enable pin if we just set phase inc to 0
 	input wire [9:0] phase_increment,
+	input wire [9:0] phase_offset,
+	input wire resync,
 	output wire [OUTPUT_WIDTH-1:0] sin,
 	output wire [OUTPUT_WIDTH-1:0] cos
 );
 
-	reg [9:0] phase_accumulator;
-	reg [1:0] quadrant;
-	always @(posedge clk) begin
-		if( !rstn ) begin
-			phase_accumulator <= 0;
-			quadrant <= 0;
-		end else begin
-			//values should be 0->999
-			if( phase_accumulator + phase_increment >= 1000 ) begin
-				phase_accumulator <= phase_accumulator + phase_increment - 1000;
-				quadrant <= quadrant + 1;
-			end else begin
-				phase_accumulator <= phase_accumulator + phase_increment;
-			end
-		end
+	wire [$clog2(1000)-1:0] acc_out;
+	accumulator #(
+		.MAX_VALUE(1000)
+	)phase_accumulator(
+		.clk(clk),
+		.nrst(!resync),
+		.increment(phase_increment),
+		.count(acc_out)
+	);
+
+
+	//This will not handle multiple LUT_SIZE*phases of values
+	wire [10:0] phase;
+	assign phase = acc_out + phase_offset;
+	reg [10:0] read_address;
+	always @(*) begin
+		if( phase >= LUT_SIZE ) read_address = phase - LUT_SIZE;
+		else                    read_address = phase;
 	end
 
-	//convert for symmetric results
-	//read address provides access before the read, so needs to occur with
-	//the non synchronized quadrant signal
-	wire [9:0] read_address;
-	assign read_address = quadrant[0] == 1'b1 ? 999 - phase_accumulator : phase_accumulator;
-	
-	//we need to optimize by using the symmetric property of sine waves
-	//also that cos and sin can share the same LUT
-	wire [OUTPUT_WIDTH-1:0] sin_mem;
-	wire [OUTPUT_WIDTH-1:0] cos_mem;
 	single_port_ram #(
 		.WIDTH(2*OUTPUT_WIDTH),
-		.DEPTH(1000),
+		.DEPTH(LUT_SIZE),
 		.FILE_TYPE("HEX"),
 		.INITIAL_MEMORY_FILE("sinewave.mem")
 	) sin_lut (
 		.clk(clk),
 		.rstn(rstn),
 		.read(1'b1),
-		.address(read_address),
-		.data({sin_mem,cos_mem})
+		.address(read_address[9:0]),
+		.data({sin,cos})
 	);
-
-	//quadrant synchronizer
-	//a ram read takes 1 extra clock cycle, we need to delay the quadrant by 1 to align
-	reg [1:0] quadsync;
-	always @(posedge clk) quadsync <= quadrant;
-	assign sin = (quadsync == 1 || quadsync == 2) ? -sin_mem : sin_mem;
-	assign cos = (quadsync >= 2 ) ? -cos_mem : cos_mem;
 
 endmodule
