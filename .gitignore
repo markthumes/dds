@@ -1,0 +1,12 @@
+vivado*.log
+vivado*.jou
+*.cache
+*.runs
+*.hw
+__pycache__
+obj_dir
+a.out
+sim_build
+dump.vcd
+results.xml
+

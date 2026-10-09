@@ -42,9 +42,9 @@ async def run(dut, period):
 	phase_slope_points = []
 	await rst(dut)
 	dut.phase_increment = 12;
+	dut.phase_offset = 1;
 	capture = []
 	for _ in range(5000):
-		dut.phase_offset = 0;
 		await RisingEdge(dut.clk)
 		capture.append(int(dut.sin.value))
 	return capture

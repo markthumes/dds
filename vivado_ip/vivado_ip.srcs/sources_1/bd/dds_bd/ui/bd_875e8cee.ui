@@ -1,13 +1,21 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.921429",
-   "Default View_TopLeft":"-30,-468",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-497,-444",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
+preplace port M_AXIS_DATA_0 -pg 1 -lvl 2 -x 280 -y -180 -defaultsOSRD
+preplace port M_AXIS_PHASE_0 -pg 1 -lvl 2 -x 280 -y -150 -defaultsOSRD
+preplace port S_AXIS_PHASE_0 -pg 1 -lvl 0 -x -60 -y -170 -defaultsOSRD
+preplace port port-id_aclk_0 -pg 1 -lvl 0 -x -60 -y -140 -defaultsOSRD
 preplace inst dds_compiler_0 -pg 1 -lvl 1 -x 110 -y -160 -defaultsOSRD
-levelinfo -pg 1 -40 110 260
-pagesize -pg 1 -db -bbox -sgen -40 -230 260 140
+preplace netloc aclk_0_1 1 0 1 -40J -150n
+preplace netloc dds_compiler_0_M_AXIS_DATA 1 1 1 260J -180n
+preplace netloc dds_compiler_0_M_AXIS_PHASE 1 1 1 NJ -150
+preplace netloc S_AXIS_PHASE_0_1 1 0 1 NJ -170
+levelinfo -pg 1 -60 110 280
+pagesize -pg 1 -db -bbox -sgen -220 -230 450 140
 "
 }
-
+0
